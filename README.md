@@ -92,7 +92,9 @@ jupyter notebook notebooks/01_dcopf_bess_siting_sizing.ipynb
 
 ## **Limitations**
 
-The load profile is synthetic and covers one day, and the model has perfect knowledge of the whole day's demand. Every battery starts and ends the day at 50% state of charge, and the capacity at which savings saturate depends on that assumption (with 10% it falls to about 250 MWh). Battery capital cost, degradation and revenue are not included, so the results are operating-cost savings, not an investment case. The DC model ignores losses, reactive power and voltage limits, and there are no ramp limits, startup costs or N-1 contingencies. Nodal prices and shadow prices are marginal values for small changes. Results depend on this test network and its branch limits.
+The load profile is synthetic and covers one day, and the model knows the whole day's demand in advance. Battery cost, degradation and revenue are not modelled, so the results are operating-cost savings and not an investment case. The model is lossless DC with no ramp limits or contingencies, and the saturation point depends on the 50% start and end state of charge.
+
+Next steps include annualized capital cost in a co-optimized sizing model, several representative days instead of one, and dispatch driven by price forecasts instead of perfect foresight.
 
 ## **Data**
 
