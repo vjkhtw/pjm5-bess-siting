@@ -1,0 +1,6 @@
+pyomo
+highspy
+numpy
+pandas
+matplotlib
+jupyter
