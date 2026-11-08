@@ -92,10 +92,9 @@ jupyter notebook notebooks/01_dcopf_bess_siting_sizing.ipynb
 
 ## **Limitations**
 
-The load profile is synthetic and covers one day, and the model knows the whole day's demand in advance. Battery cost, degradation and revenue are not modelled, so the results are operating-cost savings and not an investment case. The model is lossless DC with no ramp limits or contingencies, and the saturation point depends on the 50% start and end state of charge.
+**Limitations.** The load profile is synthetic and covers one day, and the model knows the whole day’s demand in advance. The analysis uses a single battery and a central planner that minimizes system cost, so an owner would earn less than the system saves. Battery cost, degradation and revenue are not modelled, so the results are operating-cost savings and not an investment case. The model is lossless DC with no ramp limits or contingencies. The battery is a continuous LP so that LMPs can be extracted. Efficiency losses discourage simultaneous charging and discharging and none occurred in the siting runs, but exclusivity is not enforced and could fail under negative prices. The saturation point depends on the 50% start and end state of charge, and all results depend on this network and on Branch 6’s 240 MW rating.
 
-Next steps include annualized capital cost in a co-optimized sizing model, several representative days instead of one, and dispatch driven by price forecasts instead of perfect foresight.
-
+**Next steps.** Annualized capital cost in a co-optimized sizing model, several representative days instead of one, dispatch driven by price forecasts instead of perfect foresight, and an exact MILP formulation of the battery.
 ## **Data**
 
 IEEE PES Power Grid Library, pglib\_opf\_case5\_pjm (v23.07), based on F. Li and R. Bo, "Small Test Systems for Power System Economic Studies," IEEE PES General Meeting, 2010\. Licensed CC BY 4.0.
